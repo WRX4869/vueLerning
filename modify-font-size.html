@@ -1,0 +1,31 @@
+<script src="https://unpkg.com/vue"></script>
+
+<head>
+    <title>modifyFontSize</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <div id="paragraph">
+        <p v-bind:style="{fontSize:15}">{{ message }}</p>
+        <button v-on:click="largen">bigger</button>
+        <button v-on:click="minify">smaller</button>
+    </div>
+</body>
+
+<script>
+    var vm = new Vue({
+        el: '#paragraph',
+        data: {
+            message: ' 芝麻糊！'
+        },
+        methods: {
+            minify: function () {
+                this.message = this.message.fontsize(10)
+            },
+            largen: function () {
+                this.message = this.message.fontsize(20)
+            }
+        }
+    })
+</script>
