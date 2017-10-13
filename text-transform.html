@@ -1,8 +1,10 @@
-<script src="https://unpkg.com/vue"></script>
+<!doctype html>
+<html>
 
 <head>
     <title>textTransform</title>
     <meta charset="utf-8">
+    <script src="https://unpkg.com/vue"></script>
 </head>
 
 <body>
@@ -11,21 +13,22 @@
         <button v-on:click="minify">smaller</button>
         <button v-on:click="amplify">bigger</button>
     </div>
+    <script>
+        var vm = new Vue({
+            el: '#paragraph',
+            data: {
+                message: ' ABCD '
+            },
+            methods: {
+                minify: function () {
+                    this.message = this.message.toLowerCase()
+                },
+                amplify: function () {
+                    this.message = this.message.toUpperCase()
+                }
+            }
+        })
+    </script>
 </body>
 
-<script>
-    var vm = new Vue({
-        el: '#paragraph',
-        data: {
-            message: ' ABCD '
-        },
-        methods: {
-            minify: function () {
-                this.message = this.message.toLowerCase()
-            },
-            amplify: function () {
-                this.message = this.message.toUpperCase()
-            }
-        }
-    })
-</script>
+</html>
