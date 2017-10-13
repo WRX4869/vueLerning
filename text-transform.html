@@ -1,15 +1,15 @@
 <script src="https://unpkg.com/vue"></script>
 
 <head>
-    <title>modifyFontSize</title>
+    <title>textTransform</title>
     <meta charset="utf-8">
 </head>
 
 <body>
     <div id="paragraph">
         <p v-bind:style="{fontSize:15}">{{ message }}</p>
-        <button v-on:click="largen">bigger</button>
         <button v-on:click="minify">smaller</button>
+        <button v-on:click="amplify">bigger</button>
     </div>
 </body>
 
@@ -17,14 +17,14 @@
     var vm = new Vue({
         el: '#paragraph',
         data: {
-            message: ' 芝麻糊！'
+            message: ' ABCD '
         },
         methods: {
             minify: function () {
-                this.message = this.message.fontsize(10)
+                this.message = this.message.toLowerCase()
             },
-            largen: function () {
-                this.message = this.message.fontsize(20)
+            amplify: function () {
+                this.message = this.message.toUpperCase()
             }
         }
     })
