@@ -5,11 +5,17 @@
     <title>textTransform</title>
     <meta charset="utf-8">
     <script src="https://unpkg.com/vue"></script>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+    </style>
 </head>
 
 <body>
-    <div id="paragraph">
-        <p v-bind:style="{fontSize:15}">{{ message }}</p>
+    <div id="paragraph" v-bind：style="styleObjext">
+        <p v-bind:style="styleObject">{{ message }}</p>
         <button v-on:click="minify">smaller</button>
         <button v-on:click="amplify">bigger</button>
     </div>
@@ -18,6 +24,10 @@
             el: '#paragraph',
             data: {
                 message: ' ABCD '
+                //styleObject: {
+                //backgroundColor: ' grey '
+                //fontSize: ' 15px '
+                //}
             },
             methods: {
                 minify: function () {
